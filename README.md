@@ -51,9 +51,15 @@ Passos para usar a api.
   ![image](https://github.com/user-attachments/assets/7786e168-6957-4a3e-9bfa-6aa964a1a3cc)
 
 
+A Api conta com a rastreabilidade de alterações e criações automática :
+![image](https://github.com/user-attachments/assets/d025fb7d-414e-49c5-ad25-db0d92d92f89)
 
 
 
+
+Recursos : 
+ - Collection de teste segue na raiz do projeto.
+ - Documentação Swwager : http://localhost:8080/swagger-ui/index.html
 
 
 
