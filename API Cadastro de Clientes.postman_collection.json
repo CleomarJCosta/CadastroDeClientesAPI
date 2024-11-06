@@ -1,0 +1,523 @@
+{
+	"info": {
+		"_postman_id": "be1111ee-1626-40f9-8921-c8de024ee60d",
+		"name": "API Cadastro de Clientes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11731373",
+		"_collection_link": "https://universal-meadow-826761.postman.co/workspace/My-Workspace~2d71738e-c78a-447b-8a46-e15b74aaeaa1/collection/11731373-be1111ee-1626-40f9-8921-c8de024ee60d?action=share&source=collection_link&creator=11731373"
+	},
+	"item": [
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "Post Criar Usuario",
+					"protocolProfileBehavior": {
+						"followAuthorizationHeader": false
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "   { \r\n\r\n    \"email\": \"amandasa@email.com\",\r\n    \"login\": \"amandasa@email.com\",\r\n    \"senha\": \"123\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/registrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LOGIN",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "email",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"afonsopenha@gmail.com\",\r\n    \"senha\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET  todos Usuarios",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"followAuthorizationHeader": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZm9uc29wZW5oYUBnbWFpbC5jb20iLCJleHAiOjE3MzA4NjkxNDB9.aQTBh5zETvIU-WmHrrGjg-1uJ33CfuTwWY43Nl4_8s6p4PJVJGFNlWmBjlAYWBhRBrkxD43s6De-gbBrV2YKmg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Usuario por ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"followAuthorizationHeader": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZm9uc29wZW5oYUBnbWFpbC5jb20iLCJleHAiOjE3MzA4NjkxNDB9.aQTBh5zETvIU-WmHrrGjg-1uJ33CfuTwWY43Nl4_8s6p4PJVJGFNlWmBjlAYWBhRBrkxD43s6De-gbBrV2YKmg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Usuario por ID",
+					"protocolProfileBehavior": {
+						"followAuthorizationHeader": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbWFuZGFzYUBlbWFpbC5jb20iLCJleHAiOjE3MzA4NzA3OTR9.VwfudvkV3ASVX8YHl4Rdl_2x18nvmt1Jecqksva2okYRBqbtg3KQKecbYc1YLxIT8ZEYtPW6vMyASmZs7UgVvA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/usuarios/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "Criar Cliente",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZm9uc29wZW5oYUBnbWFpbC5jb20iLCJleHAiOjE3MzA4NjkzODh9.bdT8N-2K44PwtxtUh3JP-0qloOsR62ky7KRPa5JNVMhfnKMcqJIV-mQSaHmwrLGgdrQZcqS8cnaLOIR4wsObCw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Amanda Teles de Sá \",\r\n  \"email\": \"amandasa@email.com\",\r\n  \"endereco\": {\r\n    \"rua\": \"Rua Brasil , 12\",\r\n    \"cidade\": \"Guarulhos\",\r\n    \"estado\": \"SP\"\r\n  }\r\n\r\n}\r\n    ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Cliente por ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZm9uc29wZW5oYUBnbWFpbC5jb20iLCJleHAiOjE3MzA4NjkxNDB9.aQTBh5zETvIU-WmHrrGjg-1uJ33CfuTwWY43Nl4_8s6p4PJVJGFNlWmBjlAYWBhRBrkxD43s6De-gbBrV2YKmg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/clientes/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clientes",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Cliente",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbWFuZGFzYUBlbWFpbC5jb20iLCJleHAiOjE3MzA4Njk0NTZ9.hbyYt7fGYM4OgoN5UujQypJTID0AyISnsvI5-FT0murdzSJbdYFEXqQgPjia8fCW-PHWNaWefOKgMuqIVOMnIQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 3,\r\n    \"nome\": \"Gabriel Torres\",\r\n    \"email\": \"gabriel.torres@email.com\",\r\n    \"endereco\": {\r\n        \"id\": 4,\r\n        \"rua\": \"Rua farroupilha , 318\",\r\n        \"cidade\": \"Araucaria\",\r\n        \"estado\": \"PR\"\r\n    },\r\n    \"criadoPor\": \"joao@gmail.com\",\r\n    \"modificadoPor\": \"joao@gmail.com\",\r\n    \"dataCriacao\": \"2024-11-06T01:03:38.286+00:00\",\r\n    \"dataModificacao\": \"2024-11-06T01:03:38.286+00:00\",\r\n    \"usuarioAutenticado\": \"afonsopenha@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/clientes/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clientes",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deleta Cliente",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZm9uc29wZW5oYUBnbWFpbC5jb20iLCJleHAiOjE3MzA4Njg5NzV9.tuAkyDPeE0f2seR2yNmXDQs1zinuBs0xBuPOMek2vh1VkAHrQHjEv6Eko1HTAa0Xcs9N39VFig54rBlT8J8g7w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/clientes/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clientes",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Todos Clientes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbWFuZGFzYUBlbWFpbC5jb20iLCJleHAiOjE3MzA4Njk0NTZ9.hbyYt7fGYM4OgoN5UujQypJTID0AyISnsvI5-FT0murdzSJbdYFEXqQgPjia8fCW-PHWNaWefOKgMuqIVOMnIQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Todos Clientes Ordenados Por Nome",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbWFuZGFzYUBlbWFpbC5jb20iLCJleHAiOjE3MzA4Njk0NTZ9.hbyYt7fGYM4OgoN5UujQypJTID0AyISnsvI5-FT0murdzSJbdYFEXqQgPjia8fCW-PHWNaWefOKgMuqIVOMnIQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/clientes/ordenado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clientes",
+								"ordenado"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Cliente Por estado",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2FvQGdtYWlsLmNvbSIsImV4cCI6MTczMDg3MTE3MH0.U1ZvL0-Y--DBD8DUQuJ5-WymgMHgfw-M-RFg5xlE-FwQc4Pw1rFoOozjs4_7YuDMTdROANk4n1gPwfzD2K4bQg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/clientes/estado/SP",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clientes",
+								"estado",
+								"SP"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
